@@ -1,0 +1,71 @@
+/* Apply background image to the entire body */
+body {
+    margin: 0;
+    padding: 1;
+    height: 100vh;
+    background-image: url('open.jpg'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    font-family: Arial, sans-serif;
+    color: white;
+
+}
+
+header {
+    background-color: #333;
+    padding: 15px 0;
+}
+header nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+header nav ul li {
+    margin: 0 15px;
+}
+header nav ul li a {
+    color: rgb(252, 235, 8);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-size: 25px;
+}
+header nav ul li a:hover {
+    background-color: #ddd;
+    color: rgb(10, 9, 9);
+}
+/* Branding */
+.logo {
+    font-size: 30px;
+    color: rgb(229, 245, 8);
+    text-transform: uppercase;
+}
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1 {
+    color: yellow; /* Yellow title */
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a slight shadow for emphasis */
+    margin-bottom: 0px;
+    
+}
+p {
+     font-size: 1.2rem; /* Slightly larger than normal text */
+    line-height: 1.6; /* Improved line spacing for readability */
+    justify-content: center;
+    align-items: center;
+    
+}

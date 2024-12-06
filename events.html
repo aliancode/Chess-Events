@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in Chess 2024</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to right, black 50%, white 50%);
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        caption {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #e9ec07;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f0f0f0;
+            color: #555;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .details-btn, .add-event-btn {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .details-btn:hover, .add-event-btn:hover {
+            background-color: #0056b3;
+        }
+        .add-event-btn {
+            margin: 20px auto;
+            display: block;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>
+            Events in the World Chess in 2024
+        </caption>
+        <thead>
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Lieu</th>
+                <th scope="col">Dates</th>
+                <th scope="col">Type</th>
+                <th scope="col">Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">World Youth Rapid</th>
+                <td>Slovenia</td>
+                <td>13,17, 2024</td>
+                <td>Blitz</td>
+                <td><button class="details-btn" onclick="showDetailsPage()">More Details</button></td>
+            </tr>
+            <tr>
+                <th scope="row">World Chess</th>
+                <td>Canada</td>
+                <td>3,23, 2024</td>
+                <td>Classical</td>
+                <td><button class="details-btn" onclick="showDetailsPage()">More Details</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="add-event-btn" onclick="showAddEventPage()">Add New Event</button>
+
+    <script>
+        function showDetailsPage() {
+            window.location.href = "eventsDetail.html"; // Redirect to the event detail page
+        }
+
+        function showAddEventPage() {
+            window.location.href = "AddEvents.html"; // Redirect to the add event page
+        }
+    </script>
+</body>
+</html>

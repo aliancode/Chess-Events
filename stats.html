@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Event Statistics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    
+    <h1 style="text-align: center;">Chess Event Statistics</h1>
+    <div style="width: 80%; margin: 0 auto; text-align: center;">
+        <canvas id="chessChart" style="margin: 20px 0;"></canvas>
+        <form id="updateForm" style="margin-top: 20px;">
+            <label for="category">Category:</label>
+            <select id="category">
+                <option value="Tournaments">Tournaments</option>
+                <option value="Workshops">Workshops</option>
+                <option value="Exhibitions">Exhibitions</option>
+                <option value="Simultaneous Games">Simultaneous Games</option>
+            </select>
+            <br><br>
+            <label for="quantity">Number of Events:</label>
+            <input type="number" id="quantity" min="1" style="margin-left: 10px;">
+            <br><br>
+            <button type="button" id="updateChart">Update Chart</button>
+        </form>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('chessChart').getContext('2d');
+        
+        // Initial data
+        const data = {
+            labels: ['Tournaments', 'Workshops', 'Exhibitions', 'Simultaneous Games'],
+            datasets: [{
+                label: 'Number of Chess Events',
+                data: [5, 3, 2, 1], // Simple starter data
+                backgroundColor: ['red', 'blue', 'yellow', 'green']
+            }]
+        };
+
+        // Create the chart
+        const chessChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: 'Chess Events by Category'
+                    }
+                }
+            }
+        });
+
+        // Update the chart
+        document.getElementById('updateChart').addEventListener('click', () => {
+            const category = document.getElementById('category').value;
+            const quantity = parseInt(document.getElementById('quantity').value, 10);
+
+            if (isNaN(quantity) || quantity < 1) {
+                alert("Please enter a valid number.");
+                return;
+            }
+
+            const index = data.labels.indexOf(category);
+            if (index >= 0) {
+                data.datasets[0].data[index] += quantity; // Update data
+                chessChart.update(); // Redraw chart
+            }
+        });
+    </script>
+</body>
+</html>
+
