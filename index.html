@@ -39,27 +39,24 @@
         </button>
     </div>
 <script>
-        // Fonction pour obtenir l'heure actuelle et déterminer le message
+        
         function afficherMessageBienvenue() {
-            const date = new Date();  // Crée un objet Date avec l'heure actuelle
-            const heure = date.getHours();  // Récupère l'heure de la journée (0 à 23)
-
-            let message = "";  // Déclare une variable pour le message de bienvenue
-
-            // Déterminer le message en fonction de l'heure
+            const date = new Date();  
+            const heure = date.getHours();  
+            let message = "";  
+            
             if (heure >= 5 && heure < 12) {
-                message = "Bonjour !";  // De 5h à 11h59 => Matin
+                message = "Bonjour !";  
             } else if (heure >= 12 && heure < 18) {
-                message = "Bon après-midi !";  // De 12h à 17h59 => Après-midi
+                message = "Bon après-midi !";  
             } else {
-                message = "Bonsoir !";  // De 18h à 4h59 => Soir
+                message = "Bonsoir !"; 
             }
 
-            // Afficher le message dans l'élément avec l'ID 'message-bienvenue'
+            
             document.getElementById("message-bienvenue").textContent = message;
         }
 
-        // Appeler la fonction pour afficher le message dès que la page est chargée
         window.onload = afficherMessageBienvenue;
     </script>
 </body>
