@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Person Chess</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/globals.css">
+    <link rel="stylesheet" href="/css/landing.css">
 </head>
 
 <body class="container">
@@ -17,9 +18,9 @@
                 ♛ personchess
             </div>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="stats.html">Stats</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="events.html">Événements</a></li>
+                <li><a href="stats.html">Statistiques </a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -27,38 +28,22 @@
 
     <!-- Headline -->
     <div class="headline-container">
-        <h1 class="headline-title">Welcome to Person Chess</h1>
+        <h1 class="headline-title">👋 Bienvenue sur Person Chess</h1>
         <p class="headline-description">
-            Stay updated with the latest tournaments
-            grandmaster showdowns
-            and community events in the world of chess.
-            Explore upcoming events and sharpen your strategies.
+            Restez informé des derniers tournois,
+            des duels de grands maîtres et
+            des événements communautaires dans le monde des échecs.
+            Explorez les événements à venir et affinez vos stratégies.
         </p>
         <button class="headline-button" onclick="goToEventsPage()">
-            Check Our Events
+            Découvrez nos événements
         </button>
     </div>
-<script>
-        
-        function afficherMessageBienvenue() {
-            const date = new Date();  
-            const heure = date.getHours();  
-            let message = "";  
-            
-            if (heure >= 5 && heure < 12) {
-                message = "Bonjour !";  
-            } else if (heure >= 12 && heure < 18) {
-                message = "Bon après-midi !";  
-            } else {
-                message = "Bonsoir !"; 
-            }
 
-            
-            document.getElementById("message-bienvenue").textContent = message;
-        }
+    <div class="welcome-message"></div>
 
-        window.onload = afficherMessageBienvenue;
-    </script>
+    <script src="/js/landing.js"></script>
+
 </body>
 
 </html>

@@ -1,0 +1,21 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    gap: 2rem;
+}
+
+.main .title {
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.main .canvas {
+    width: 100%;
+    max-width: 500px;
+    max-height: 400px;
+}

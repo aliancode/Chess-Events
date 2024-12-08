@@ -1,0 +1,85 @@
+/* Defining our variables */
+:root {
+
+    /* Colors */
+    --light: #f8f9fa;
+    --dark: #212529;
+    --on-top-dark: #343a40;
+    --primary: #ffd500;
+    --shadow: #00000030;
+
+    /* Max width */
+    --max-w: 1200px;
+
+}
+
+/* Reset some basic styles */
+* {
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    color: var(--light);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Apply background image to the entire body */
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark);
+    position: relative;
+}
+
+/* Header */
+
+.header-container {
+    background-color: var(--dark);
+    padding: 1rem;
+    /* Shadow */
+    box-shadow: 0 0 10px 10px var(--shadow);
+}
+
+.nav-container {
+    width: 100%;
+    max-width: var(--max-w);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* Branding */
+.nav-container .logo {
+    font-size: 2rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-family: monospace;
+    font-weight: bolder;
+}
+
+.nav-container ul {
+    display: flex;
+    /* space between ul childrens */
+    gap: 1rem;
+    list-style-type: none;
+}
+
+.nav-container ul li a {
+    background-color: var(--on-top-dark);
+    color: var(--primary);
+    text-decoration: none;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    font-weight: bolder;
+    /* Rounded edges */
+    border-radius: 5rem;
+    /* Smooth transformation */
+    transition: .3s;
+}
+
+.nav-container ul li a:hover {
+    background-color: var(--primary);
+    color: var(--dark);
+}

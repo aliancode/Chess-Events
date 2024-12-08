@@ -1,123 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Event</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .form-container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #555;
-        }
-
-        input,
-        select,
-        textarea {
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        input:focus,
-        select:focus,
-        textarea:focus {
-            border-color: #007bff;
-            outline: none;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-
-        button {
-            padding: 10px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Nouvel événement</title>
+    <link rel="stylesheet" href="/css/globals.css">
+    <link rel="stylesheet" href="/css/add-event.css">
 </head>
-<body>
-    <div class="form-container">
-        <h1>Add New Event</h1>
-        <form id="eventForm">
-            <label for="eventName">Event Name</label>
-            <input type="text" id="eventName" placeholder="Enter event name" required>
 
-            <label for="location">Location</label>
-            <input type="text" id="location" placeholder="Enter event location" required>
+<body>
+
+    <!-- Header with Navbar -->
+    <header class="header-container">
+        <nav class="nav-container">
+            <div class="logo">
+                ♛ personchess
+            </div>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="events.html">Événements</a></li>
+                <li><a href="stats.html">Statistiques </a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+        <h1 class="title">Ajouter un nouvel événement</h1>
+        <form id="eventForm">
+            <label for="eventName">Nom de l'événement</label>
+            <input type="text" id="eventName" placeholder="Entrez le nom de l'événement" required>
+
+            <label for="location">Emplacement</label>
+            <input type="text" id="location" placeholder="Entrez l'emplacement de l'événement" required>
 
             <label for="eventDate">Date</label>
             <input type="date" id="eventDate" required>
 
-            <label for="eventType">Event Type</label>
+            <label for="eventType">Type d'événement</label>
             <select id="eventType" required>
                 <option value="tournoit">Concert</option>
-                <option value="challenge">Exhibition</option>
-                <option value="Other">Other</option>
+                <option value="challenge">Exposition</option>
+                <option value="Other">Autre</option>
             </select>
 
             <label for="description">Description</label>
-            <textarea id="description" rows="4" placeholder="Enter event description" required></textarea>
+            <textarea id="description" rows="4" placeholder="Entrez la description de l'événement" required></textarea>
 
-            <button type="button" onclick="submitEvent()">Add Event</button>
+            <button class="btn" type="button" onclick="submitEvent()">
+                Ajouter un événement
+            </button>
         </form>
-    </div>
+    </main>
 
-    <script>
-        function submitEvent() {
-            const eventName = document.getElementById('eventName').value.trim();
-            const location = document.getElementById('location').value.trim();
-            const eventDate = document.getElementById('eventDate').value;
-            const eventType = document.getElementById('eventType').value;
-            const description = document.getElementById('description').value.trim();
-
-            if (!eventName || !location || !eventDate || !eventType || !description) {
-                alert("Please fill in all fields.");
-                return;
-            }
-
-            alert("Event added successfully!");
-            document.getElementById('eventForm').reset(); // Clear the form
-        }
-    </script>
+    <script src="/js/add-event.js"></script>
 </body>
+
 </html>
